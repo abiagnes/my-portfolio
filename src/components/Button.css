@@ -1,0 +1,45 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  white-space: nowrap;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, gap 0.2s, padding 0.2s;
+}
+
+.button__label {
+  letter-spacing: -0.16px;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.button--secondary {
+  border: 1px solid transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    gap: 16px;
+    padding-inline: 26px 22px;
+  }
+
+  .button--primary:hover {
+    background: var(--text);
+  }
+
+  .button--secondary:hover {
+    background: rgba(198, 243, 107, 0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}

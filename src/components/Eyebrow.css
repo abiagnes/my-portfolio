@@ -1,0 +1,10 @@
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}

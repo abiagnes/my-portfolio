@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Decision / How to add?">
+<path d="M55 0L110 55L55 110L0 55L55 0Z" fill="#7C6BD6" fill-opacity="0.16"/>
+<mask id="stroke0_0_24" fill="white">
+<path d="M55 0L110 55L55 110L0 55L55 0Z"/>
+</mask>
+<path d="M55 0L110 55L55 110L0 55L55 0Z" stroke-width="3" stroke="#B9AEF0" mask="url(#stroke0_0_24)"/>
+</g>
+</svg>

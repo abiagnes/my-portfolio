@@ -1,0 +1,33 @@
+:root {
+  --bg: #0a0a0b;
+  --bg-alt: #0e0e10;
+  --surface: #121214;
+  --surface-hover: #19191c;
+  --surface-raised: #141416;
+  --surface-tag: #1f1f23;
+  --surface-placeholder: #222226;
+
+  --border: #26262b;
+  --border-dashed: #34343a;
+  --border-strong: #3a3a40;
+
+  --text: #f4f1ea;
+  --text-muted: #a19e96;
+  --text-subtle: #8f8c85;
+  --text-faint: #8a8780;
+
+  --accent: #c6f36b;
+  --on-accent: #0e1206;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* 80px at the 1440 design width, keeping content capped at 1280px beyond it. */
+  --gutter: clamp(20px, 5.556vw, 80px);
+  --section-inline: max(var(--gutter), calc((100% - 1280px) / 2));
+  --section-top: clamp(72px, 9.03vw, 130px);
+  --section-bottom: clamp(80px, 9.72vw, 140px);
+}

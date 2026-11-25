@@ -1,0 +1,1268 @@
+/* Verdant case study. Measurements follow Figma frame 276:2378 at 1440px wide. */
+
+.verdant-hero,
+.verdant-section {
+  --verdant-section-y: clamp(64px, 8.33vw, 120px);
+  --verdant-gap: clamp(40px, 4.44vw, 64px);
+  --verdant-green-card: #132019;
+  --verdant-green-border: #2a3d31;
+  --verdant-ivory: #f6f1e7;
+  --verdant-forest: #2f4a3a;
+  --verdant-sage-text: #c9d8be;
+  --verdant-break: #e07a6b;
+}
+
+.verdant-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--verdant-gap);
+  padding: var(--verdant-section-y) var(--section-inline);
+  border-top: 1px solid var(--border);
+}
+
+.verdant-section--blocks {
+  gap: clamp(56px, 6.67vw, 96px);
+}
+
+/* Shared type */
+
+.verdant-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-kicker__number {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.verdant-kicker__rule {
+  flex: none;
+  width: 32px;
+  height: 1px;
+  background: rgba(198, 243, 107, 0.5);
+}
+
+.verdant-title {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 4.44vw, 64px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+
+.verdant-subtitle {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.06vw, 44px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.verdant-index,
+.verdant-label {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-note {
+  color: var(--text-subtle);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.verdant-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Section opener: title column 640 / copy column 560 of 1280 */
+
+.verdant-intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.verdant-intro__head {
+  display: flex;
+  flex: 0 1 50%;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.verdant-intro__body {
+  display: flex;
+  flex: 0 1 43.75%;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding-top: 40px;
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.25vw, 18px);
+  line-height: 1.65;
+}
+
+.verdant-intro--wide .verdant-intro__body {
+  flex-basis: 48.2%;
+}
+
+.verdant-intro--reflection .verdant-intro__head {
+  flex-basis: 41.72%;
+}
+
+.verdant-intro--reflection .verdant-intro__body {
+  flex-basis: 51.56%;
+}
+
+/* Cards */
+
+.verdant-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(24px, 2.78vw, 40px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--surface);
+}
+
+.verdant-panel--roomy {
+  gap: 36px;
+  padding: clamp(24px, 3.06vw, 44px);
+}
+
+.verdant-section .verdant-card--green {
+  border-color: var(--verdant-green-border);
+  background: var(--verdant-green-card);
+}
+
+/* Image stage */
+
+.verdant-shot {
+  overflow: hidden;
+  border-radius: clamp(16px, 1.94vw, 28px);
+  background: var(--surface);
+}
+
+.verdant-shot img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Figma crops these three images inside their frame. */
+.verdant-shot--detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1280 / 1349;
+}
+
+.verdant-shot--detail img {
+  flex: none;
+  width: 103.75%;
+  max-width: none;
+}
+
+.verdant-shot--experiences {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1280 / 781;
+}
+
+.verdant-shot--experiences img {
+  width: 99.375%;
+}
+
+.verdant-shot--sustainability {
+  aspect-ratio: 1280 / 910;
+}
+
+.verdant-shot--sustainability img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero */
+
+.verdant-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(32px, 3.89vw, 56px) var(--section-inline) clamp(64px, 6.94vw, 100px);
+  overflow: clip;
+}
+
+.verdant-hero__tag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.verdant-hero__pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  line-height: normal;
+}
+
+.verdant-hero__category {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-hero__headline {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(32px, 3.54vw, 51px);
+}
+
+.verdant-hero__title {
+  flex: 0 1 57.8125%;
+  min-width: 0;
+  color: var(--text);
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.verdant-hero__title em {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 1.139em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.verdant-hero__intro {
+  flex: 0 1 38.2%;
+  min-width: 0;
+  color: var(--text);
+  font-size: clamp(17px, 1.25vw, 18px);
+  line-height: 1.65;
+}
+
+.verdant-hero__media {
+  overflow: hidden;
+  border-radius: clamp(16px, 1.94vw, 28px);
+}
+
+.verdant-hero__media img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Figma's second hero glow, rotated so it runs down the right of the banner. */
+.verdant-hero__glow {
+  position: absolute;
+  top: 48.75%;
+  left: calc(var(--section-inline) + (100% - 2 * var(--section-inline)) * 0.628);
+  width: clamp(800px, 105.2vw, 1515px);
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+  pointer-events: none;
+}
+
+.verdant-hero__details {
+  position: relative;
+  display: flex;
+  margin: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.verdant-hero__detail {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 24px;
+  border-left: 1px solid var(--border);
+}
+
+.verdant-hero__detail:nth-child(2) {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.verdant-hero__detail dt {
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-hero__detail dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* 02 The challenge */
+
+.verdant-disconnect__steps {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.verdant-disconnect__step {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  min-height: 133px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface-hover);
+}
+
+.verdant-disconnect__step p:last-child {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.verdant-disconnect__break {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  color: var(--verdant-break);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: normal;
+}
+
+.verdant-disconnect__break span {
+  width: 18px;
+  height: 1px;
+  background: rgba(143, 140, 133, 0.6);
+}
+
+.verdant-purposes {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.verdant-purpose {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: clamp(28px, 3.06vw, 44px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--surface);
+}
+
+.verdant-purpose__title {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.06vw, 44px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.verdant-purpose__text {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.verdant-purposes__balance {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(198, 243, 107, 0.6);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+}
+
+.verdant-quote {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding-top: 16px;
+}
+
+.verdant-quote::before {
+  content: '';
+  flex: none;
+  width: 2px;
+  background: var(--accent);
+}
+
+.verdant-quote p {
+  flex: 0 1 960px;
+  min-width: 0;
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.33vw, 48px);
+  font-style: italic;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+/* 03 The design opportunity */
+
+.verdant-journey__stages {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.verdant-journey__stages::before {
+  content: '';
+  position: absolute;
+  top: 7.25px;
+  right: 8px;
+  left: 8px;
+  height: 1.5px;
+  background: linear-gradient(to right, rgba(198, 243, 107, 0.25), rgba(198, 243, 107, 0.9));
+}
+
+.verdant-journey__stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.verdant-journey__title {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.verdant-journey__text {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.verdant-journey__thread {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border: 1px solid rgba(198, 243, 107, 0.3);
+  border-radius: 999px;
+  background: rgba(198, 243, 107, 0.08);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.verdant-journey__heart {
+  flex: none;
+  color: var(--accent);
+  line-height: normal;
+}
+
+.verdant-goals {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.verdant-goals__row {
+  display: grid;
+  gap: 20px;
+}
+
+.verdant-goals__row--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.verdant-goals__row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.verdant-goal {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(24px, 2.22vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.verdant-goal__number {
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 4.44vw, 64px);
+  line-height: 1;
+}
+
+.verdant-goal__text {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.verdant-goals__row--2 .verdant-goal__text {
+  font-size: clamp(20px, 1.67vw, 24px);
+}
+
+/* 04 Structuring the experience */
+
+.verdant-visitors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.verdant-visitor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(24px, 2.5vw, 36px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--surface);
+}
+
+.verdant-visitor__title {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 2.78vw, 40px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.verdant-visitor__text {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.verdant-visitor__path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.verdant-chip {
+  padding: 7px 14px;
+  border: 1px solid rgba(198, 243, 107, 0.4);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-visitor__arrow {
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.verdant-ia__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.verdant-ia__rule {
+  flex: 1 1 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.verdant-ia__count {
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+  white-space: nowrap;
+}
+
+.verdant-ia__groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.verdant-ia__group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+  padding: 0 28px;
+  border-left: 1px solid var(--border);
+}
+
+.verdant-ia__group:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.verdant-ia__title {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 2.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+.verdant-ia__title--accent {
+  color: var(--accent);
+}
+
+.verdant-ia__pages li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.verdant-ia__pages li span:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.verdant-ia__arrow {
+  color: var(--text-subtle);
+  font-size: 14px;
+  line-height: normal;
+}
+
+.verdant-ia__note {
+  color: var(--text-subtle);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 05 Visual direction */
+
+.verdant-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 16px;
+}
+
+.verdant-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  height: clamp(300px, 27.78vw, 400px);
+  padding: clamp(20px, 1.94vw, 28px);
+  border-radius: 24px;
+}
+
+.verdant-tile:nth-child(even) {
+  height: clamp(255px, 23.61vw, 340px);
+}
+
+.verdant-tile--forest {
+  background: linear-gradient(to bottom, #2c4a35, #0e1a12);
+}
+
+.verdant-tile--mist {
+  background: linear-gradient(to bottom, #6f7f78, #252e2b);
+}
+
+.verdant-tile--water {
+  background: linear-gradient(to bottom, #2f5650, #0f1f1c);
+}
+
+.verdant-tile--earth {
+  background: linear-gradient(to bottom, #8a6648, #33241a);
+}
+
+.verdant-tile__index {
+  color: rgba(246, 241, 231, 0.7);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-tile__title {
+  color: var(--verdant-ivory);
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 2.36vw, 34px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.verdant-tile__text {
+  color: rgba(246, 241, 231, 0.75);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.verdant-contrast {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.verdant-contrast__half {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(28px, 3.06vw, 44px);
+}
+
+.verdant-contrast__half--ivory {
+  background: var(--verdant-ivory);
+  color: #1e2e24;
+}
+
+.verdant-contrast__half--forest {
+  background: var(--verdant-forest);
+  color: var(--verdant-ivory);
+}
+
+.verdant-contrast__label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-contrast__half--ivory .verdant-contrast__label {
+  color: var(--verdant-forest);
+}
+
+.verdant-contrast__half--forest .verdant-contrast__label,
+.verdant-contrast__half--forest .verdant-contrast__text {
+  color: var(--verdant-sage-text);
+}
+
+.verdant-contrast__title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.06vw, 44px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.verdant-contrast__text {
+  color: #4a4a42;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.verdant-principles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.verdant-principle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(198, 243, 107, 0.6);
+}
+
+.verdant-principle__title {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 2.22vw, 32px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+.verdant-principle__text {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 06 Design system */
+
+.verdant-system {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.verdant-system__card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.verdant-system__card--tight {
+  gap: 14px;
+}
+
+.verdant-system__title {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.verdant-system__text {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.verdant-swatches {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.verdant-swatch {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.verdant-swatch__chip {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+
+.verdant-swatch__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.verdant-swatch__name {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.verdant-swatch__role {
+  color: var(--text-subtle);
+  font-size: 14px;
+}
+
+.verdant-type {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.verdant-type__serif {
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 72px;
+  line-height: 1;
+}
+
+.verdant-type__sans {
+  color: var(--text-muted);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.verdant-type__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.42px;
+}
+
+.verdant-components {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.verdant-components li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.verdant-components img {
+  flex: none;
+}
+
+/* 07 Designing the experience */
+
+.verdant-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.verdant-block__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.verdant-block__head {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.verdant-block__row--narrow .verdant-block__head {
+  flex: 0 1 38.9%;
+}
+
+.verdant-block__copy {
+  display: flex;
+  flex: 0 0 57.03%;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding-top: 35px;
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.25vw, 18px);
+  line-height: 1.65;
+}
+
+/* 08 Reservation experience */
+
+.verdant-decisions__list {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.verdant-decision {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 400px) minmax(0, 1fr);
+  gap: 40px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+
+.verdant-decision:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.verdant-decision__title {
+  color: var(--text);
+  font-size: clamp(20px, 1.53vw, 22px);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.verdant-decision__text {
+  color: var(--text-muted);
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.65;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .verdant-intro,
+  .verdant-block__row,
+  .verdant-hero__headline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .verdant-intro__head,
+  .verdant-intro__body,
+  .verdant-block__head,
+  .verdant-block__copy,
+  .verdant-hero__title,
+  .verdant-hero__intro {
+    flex: none !important;
+  }
+
+  .verdant-intro__body,
+  .verdant-block__copy {
+    max-width: 720px;
+    padding-top: 0;
+  }
+
+  .verdant-hero__details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .verdant-hero__detail {
+    padding: 20px;
+  }
+
+  .verdant-hero__detail:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .verdant-hero__detail:nth-child(2) {
+    padding-left: 20px;
+    border-left: 1px solid var(--border);
+  }
+
+  .verdant-hero__detail:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+
+  .verdant-goals__row--3,
+  .verdant-system {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .verdant-goals__row--3 .verdant-goal:last-child,
+  .verdant-system__card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .verdant-tiles,
+  .verdant-principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .verdant-ia__groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 36px;
+  }
+
+  .verdant-ia__group:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .verdant-decision {
+    grid-template-columns: 40px minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 24px;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  .verdant-disconnect__steps {
+    flex-direction: column;
+  }
+
+  .verdant-disconnect__step {
+    flex: none;
+    min-height: 0;
+  }
+
+  .verdant-disconnect__break {
+    flex-direction: column;
+    align-self: flex-start;
+    padding: 8px 0 8px 24px;
+  }
+
+  .verdant-disconnect__break span {
+    width: 1px;
+    height: 10px;
+  }
+
+  .verdant-purposes,
+  .verdant-visitors,
+  .verdant-goals__row--2,
+  .verdant-goals__row--3,
+  .verdant-system,
+  .verdant-contrast {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .verdant-journey__stages {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .verdant-journey__stages::before {
+    top: 8px;
+    right: auto;
+    bottom: 8px;
+    left: 7.25px;
+    width: 1.5px;
+    height: auto;
+    background: linear-gradient(to bottom, rgba(198, 243, 107, 0.25), rgba(198, 243, 107, 0.9));
+  }
+
+  .verdant-journey__stage {
+    padding-left: 32px;
+  }
+
+  .verdant-journey__stage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .verdant-journey__thread {
+    align-items: flex-start;
+    border-radius: 20px;
+  }
+
+  .verdant-tile,
+  .verdant-tile:nth-child(even) {
+    height: 240px;
+  }
+
+  .verdant-tiles {
+    align-items: stretch;
+  }
+
+  .verdant-decision {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 8px 16px;
+    padding: 24px 0;
+  }
+
+  .verdant-decision__text {
+    grid-column: 2;
+  }
+
+  .verdant-quote {
+    gap: 20px;
+  }
+
+  .verdant-ia__header {
+    flex-wrap: wrap;
+  }
+
+  .verdant-ia__rule {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .verdant-hero__details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .verdant-hero__detail,
+  .verdant-hero__detail:nth-child(2) {
+    padding: 18px 0;
+    border-left: 0;
+  }
+
+  .verdant-hero__detail:nth-child(n + 2) {
+    border-top: 1px solid var(--border);
+  }
+
+  .verdant-tiles,
+  .verdant-principles,
+  .verdant-ia__groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .verdant-ia__group,
+  .verdant-ia__group:nth-child(odd) {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .verdant-tile,
+  .verdant-tile:nth-child(even) {
+    height: 200px;
+  }
+
+  .verdant-type__serif {
+    font-size: 60px;
+  }
+
+  .verdant-type__sans {
+    font-size: 36px;
+  }
+}

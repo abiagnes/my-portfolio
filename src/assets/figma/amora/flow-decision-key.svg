@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Decision / ">
+<path d="M13 0L26 13L13 26L0 13L13 0Z" fill="#7C6BD6" fill-opacity="0.16"/>
+<mask id="stroke0_0_28" fill="white">
+<path d="M13 0L26 13L13 26L0 13L13 0Z"/>
+</mask>
+<path d="M13 0L26 13L13 26L0 13L13 0Z" stroke-width="3" stroke="#B9AEF0" mask="url(#stroke0_0_28)"/>
+</g>
+</svg>

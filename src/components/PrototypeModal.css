@@ -1,0 +1,164 @@
+.proto-modal {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  animation: proto-modal-in 0.25s var(--ease-out);
+}
+
+@keyframes proto-modal-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.proto-modal__bar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px clamp(12px, 2vw, 24px);
+  padding-top: max(12px, env(safe-area-inset-top));
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.proto-modal__back,
+.proto-modal__close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: 500 15px/1 var(--font-sans);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.proto-modal__back {
+  padding: 0 18px 0 14px;
+}
+
+.proto-modal__close {
+  width: 44px;
+  font-size: 16px;
+}
+
+.proto-modal__back:hover,
+.proto-modal__close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.proto-modal__back:focus-visible,
+.proto-modal__close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.proto-modal__title {
+  overflow: hidden;
+  min-width: 0;
+  margin: 0;
+  color: var(--text-muted);
+  font: 400 13px/1.4 var(--font-mono);
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.proto-modal__frame {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.proto-modal__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: var(--text-subtle);
+  font: 400 15px/1 var(--font-sans);
+}
+
+.proto-modal__iframe {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .proto-modal__title {
+    display: none;
+  }
+
+  .proto-modal__back {
+    padding: 0 14px 0 12px;
+    font-size: 14px;
+  }
+}
+
+/* Phone mock-up: the 280×582.56 frame art sits over the prototype; the screen is its glass area. */
+.proto-modal__frame:has(.proto-modal__phone) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vh, 32px) 16px;
+  background: radial-gradient(60% 60% at 50% 45%, rgba(198, 243, 107, 0.08), transparent 70%);
+}
+
+.proto-modal__phone {
+  position: relative;
+  /* Fit the height left under the bar (~70px plus padding), cap at 860px tall, never wider than the screen. */
+  width: min(calc((100dvh - 136px) * 0.4806), 413px, 100%);
+  aspect-ratio: 280 / 582.56;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+
+.proto-modal__screen {
+  position: absolute;
+  top: 1.023%;
+  left: 2.657%;
+  overflow: hidden;
+  width: 95.137%;
+  height: 97.22%;
+  border-radius: 13% / 6.2%;
+  background: #fff;
+}
+
+.proto-modal__screen .proto-modal__loading {
+  color: #6b6b72;
+}
+
+.proto-modal__device {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Fixed-size Figma render, positioned and scaled by PhoneScreen to cover the glass. */
+.proto-modal__screen .proto-modal__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 1100px;
+  max-width: none;
+  transform-origin: 0 0;
+}
